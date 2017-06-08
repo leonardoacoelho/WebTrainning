@@ -1,26 +1,26 @@
 ﻿@model WebTraining.Web.Models.ProdutoVM
 
 @{
-    ViewBag.Title = "Adicionar";
+    ViewBag.Title = "Editar";
 }
 
 <h2>Produto</h2>
 
-<ol class="breadcrumb">
+<ol class="breadcrumb alert alert-info">
     <li><a href="@Url.Action("Index")">Produtos</a></li>
-    <li>Adicionar</li>
+    <li>Editar</li>
 </ol>
 
-<hr/>
+<hr />
 
-<h2>Adicionar</h2>
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-sm-3 col-md-2" })
             <div class="col-sm-3 col-md-2">
@@ -40,14 +40,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GrupoProduto_Id, htmlAttributes: new { @class = "control-label col-sm-3 col-md-2" })
             <div class="col-sm-3 col-md-2">
-                @Html.DropDownListFor(model => model.GrupoProduto_Id, Model.GruposProdutos, "Selecione", new { @class = "form-control" } )
+                @Html.DropDownListFor(model => model.GrupoProduto_Id, Model.GruposProdutos, "Selecione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.GrupoProduto_Id, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-sm-3 col-md-4 text-right">
-                <input type="submit" value="Adicionar" class="btn btn-warning" />
+                <input type="submit" value="Confirmar" class="btn btn-warning" />
             </div>
         </div>
     </div>

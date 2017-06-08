@@ -21,7 +21,7 @@ namespace WebTraining.DAL
         {
             using (var context = new DataContext())
             {
-                return context.Produtos.Include(x => x.GrupoProduto_Id).FirstOrDefault(x => x.Id == id);
+                return context.Produtos.Include(x => x.GrupoProduto).FirstOrDefault(x => x.Id == id);
             }
         }
 
@@ -29,15 +29,7 @@ namespace WebTraining.DAL
         {
             using (var context = new DataContext())
             {
-                return context.Produtos.Include(x => x.GrupoProduto_Id).ToList();
-            }
-        }
-
-        public override List<Produto> List(Expression<Func<Produto, bool>> filter)
-        {
-            using (var context = new DataContext())
-            {
-                return context.Produtos.Include(x => x.GrupoProduto_Id).ToList();
+                return context.Produtos.Include(x => x.GrupoProduto).ToList();
             }
         }
     }

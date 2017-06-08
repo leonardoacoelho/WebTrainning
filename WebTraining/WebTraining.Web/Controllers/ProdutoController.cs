@@ -22,6 +22,13 @@ namespace WebTraining.Web.Controllers
             return View(produtoVm);
         }
 
+        public override ActionResult Editar(int? id)
+        {
+            var produtoVm = GetViewModel(id);
+            produtoVm.GruposProdutos = PreencherGrupos();
+            return View(produtoVm);
+        }
+
         protected override void PostViewModelError(ProdutoVM viewModel)
         {
             viewModel.GruposProdutos = PreencherGrupos();
@@ -32,7 +39,7 @@ namespace WebTraining.Web.Controllers
             using (var bo = new GrupoProdutoBO())
             {
                 var grupos = bo.List();
-                return grupos.Select(x => new SelectListItem { Text = x.Descricao, Value = x.Id.ToString() }).ToSelectList();
+                return grupos.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Descricao }).ToSelectList();
             }
         }
     }

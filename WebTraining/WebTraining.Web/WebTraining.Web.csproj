@@ -118,6 +118,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\GrupoProdutoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -125,9 +127,11 @@
     </Compile>
     <Compile Include="Interfaces\IBaseController.cs" />
     <Compile Include="Mappers\AutoMapperConfig.cs" />
+    <Compile Include="Mappers\Profiles\ClienteProfile.cs" />
     <Compile Include="Mappers\Profiles\GrupoProdutoProfile.cs" />
     <Compile Include="Mappers\Profiles\ProdutoProfile.cs" />
     <Compile Include="Models\Base\BaseVM.cs" />
+    <Compile Include="Models\ClienteVM.cs" />
     <Compile Include="Models\GrupoProdutoVM.cs" />
     <Compile Include="Models\ProdutoVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +147,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\GrupoProduto\Index.cshtml" />
+    <Content Include="Views\GrupoProduto\Adicionar.cshtml" />
+    <Content Include="Views\GrupoProduto\Editar.cshtml" />
+    <Content Include="Views\GrupoProduto\Remover.cshtml" />
+    <Content Include="Views\GrupoProduto\Detalhar.cshtml" />
+    <Content Include="Views\Produto\Editar.cshtml" />
+    <Content Include="Views\Produto\Remover.cshtml" />
+    <Content Include="Views\Produto\Detalhar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -152,7 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebTraining.BLL\WebTraining.BLL.csproj">

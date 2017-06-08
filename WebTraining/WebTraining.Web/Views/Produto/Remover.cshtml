@@ -1,0 +1,59 @@
+﻿@model WebTraining.Web.Models.ProdutoVM
+
+@{
+    ViewBag.Title = "Remover";
+}
+
+<h2>Produto</h2>
+
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index")">Grupos de Produtos</a></li>
+    <li>Remover</li>
+</ol>
+
+<hr />
+
+<h3 class="alert alert-warning text-center">Você tem certeza que deseja remover este produto?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrupoProduto_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrupoProduto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-danger" />
+        </div>
+    }
+</div>
+
+<hr />
+
+<div class="alert alert-info text text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>

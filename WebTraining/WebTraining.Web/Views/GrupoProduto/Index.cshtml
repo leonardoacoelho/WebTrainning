@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebTraining.Web.Models.GrupoProdutoVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Grupos de Produtos</h2>
+
+<hr />
+
+<p>
+    <a href="@Url.Action("Adicionar")" class="btn btn-success">Adicionar</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                <a href="@Url.Action("Editar", new { id=item.Id })" class="btn btn-primary">Editar</a>
+                <a href="@Url.Action("Detalhar", new { id=item.Id })" class="btn btn-warning">Detalhar</a>
+                <a href="@Url.Action("Remover", new { id = item.Id})" class="btn btn-danger">Remover</a>
+            </td>
+        </tr>
+    }
+
+</table>

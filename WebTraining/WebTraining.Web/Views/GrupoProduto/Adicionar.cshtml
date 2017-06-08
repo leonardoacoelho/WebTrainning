@@ -1,19 +1,17 @@
-﻿@model WebTraining.Web.Models.ProdutoVM
+﻿@model WebTraining.Web.Models.GrupoProdutoVM
 
 @{
     ViewBag.Title = "Adicionar";
 }
 
-<h2>Produto</h2>
+<h2>Grupo de Produto</h2>
 
 <ol class="breadcrumb">
-    <li><a href="@Url.Action("Index")">Produtos</a></li>
+    <li><a href="@Url.Action("Index")">Grupos de Produtos</a></li>
     <li>Adicionar</li>
 </ol>
 
-<hr/>
-
-<h2>Adicionar</h2>
+<hr />
 
 @using (Html.BeginForm()) 
 {
@@ -26,22 +24,6 @@
             <div class="col-sm-3 col-md-2">
                 @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-sm-3 col-md-2" })
-            <div class="col-sm-3 col-md-2">
-                @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GrupoProduto_Id, htmlAttributes: new { @class = "control-label col-sm-3 col-md-2" })
-            <div class="col-sm-3 col-md-2">
-                @Html.DropDownListFor(model => model.GrupoProduto_Id, Model.GruposProdutos, "Selecione", new { @class = "form-control" } )
-                @Html.ValidationMessageFor(model => model.GrupoProduto_Id, "", new { @class = "text-danger" })
             </div>
         </div>
 

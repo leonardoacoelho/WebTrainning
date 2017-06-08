@@ -1,0 +1,48 @@
+﻿@model WebTraining.Web.Models.ProdutoVM
+
+@{
+    ViewBag.Title = "Detalhar";
+}
+
+<h2>Detalhar</h2>
+
+<div>
+    <h4>ProdutoVM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrupoProduto_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrupoProduto)
+        </dd>
+
+    </dl>
+</div>
+<br />
+<p>
+    <a href="@Url.Action("Editar", new{ Model.Id })" class="btn btn-primary text-right">Editar</a>
+</p>
+
+<hr />
+
+<div class="alert alert-info text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>

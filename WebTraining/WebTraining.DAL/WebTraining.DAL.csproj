@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteDAO.cs" />
+    <Compile Include="Configurations\ClienteConfig.cs" />
     <Compile Include="Configurations\GrupoProdutoConfig.cs" />
     <Compile Include="Configurations\ProdutoConfig.cs" />
     <Compile Include="Context\DataContext.cs" />
@@ -57,6 +59,10 @@
     <Compile Include="Migrations\201706011410025_Initial.cs" />
     <Compile Include="Migrations\201706011410025_Initial.Designer.cs">
       <DependentUpon>201706011410025_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706082040554_Add_Cliente.cs" />
+    <Compile Include="Migrations\201706082040554_Add_Cliente.Designer.cs">
+      <DependentUpon>201706082040554_Add_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProdutoDAO.cs" />
@@ -75,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706011410025_Initial.resx">
       <DependentUpon>201706011410025_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706082040554_Add_Cliente.resx">
+      <DependentUpon>201706082040554_Add_Cliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

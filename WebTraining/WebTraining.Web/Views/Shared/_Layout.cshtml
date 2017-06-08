@@ -21,7 +21,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Produto")"><strong>Produtos</strong></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Cadastros</strong><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Produto")">Produtos</a></li>
+                            <li><a href="@Url.Action("Index", "GrupoProduto")">Grupos de Produtos</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

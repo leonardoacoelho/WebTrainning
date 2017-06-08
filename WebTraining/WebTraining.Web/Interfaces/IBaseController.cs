@@ -7,27 +7,25 @@ using System.Web.Mvc;
 
 namespace WebTraining.Web.Interface
 {
+    public interface IBaseController<TViewModel> where TViewModel : class
     {
-        public interface IBaseController<TViewModel> where TViewModel : class
-        {
-            ActionResult Index();
+        ActionResult Index();
 
-            ActionResult Adicionar();
+        ActionResult Adicionar();
 
-            [HttpPost]
-            ActionResult Adicionar(TViewModel viewModel);
+        [HttpPost]
+        ActionResult Adicionar(TViewModel viewModel);
 
-            ActionResult Editar(int? id);
+        ActionResult Editar(int? id);
 
-            [HttpPost]
-            ActionResult Editar(TViewModel viewModel);
+        [HttpPost]
+        ActionResult Editar(TViewModel viewModel);
 
-            ActionResult Remover(int? id);
+        ActionResult Remover(int? id);
 
-            [HttpPost]
-            ActionResult Remover(int id);
+        [HttpPost]
+        ActionResult Remover(int id);
 
-            ActionResult Detalhar(int? id);
-        }
+        ActionResult Detalhar(int? id);
     }
 }

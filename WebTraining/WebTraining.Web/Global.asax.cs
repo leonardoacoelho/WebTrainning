@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using WebTraining.Web.Mappers;
 
 namespace WebTraining.Web
 {
@@ -13,6 +14,8 @@ namespace WebTraining.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            AutoMapperConfig.Configure();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace WebTraining.Web.Mappers
                 {
                     cfg.AddProfile<ProdutoProfile>();
                     cfg.AddProfile<GrupoProdutoProfile>();
+                    cfg.AddProfile<ClienteProfile>();
                 }
             );
         }
