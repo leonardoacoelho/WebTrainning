@@ -23,10 +23,14 @@ namespace WebTraining.DAL.Context
             modelBuilder.Configurations.Add(new ProdutoConfig());
             modelBuilder.Configurations.Add(new GrupoProdutoConfig());
             modelBuilder.Configurations.Add(new ClienteConfig());
+            modelBuilder.Configurations.Add(new VendaConfig());
+            modelBuilder.Configurations.Add(new ItemVendaConfig());
         }
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<GrupoProduto> GrupoProdutos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Venda> Vendas { get; set; }
+        public DbSet<ItemVenda> ItensVendas { get; set; }
     }
 }

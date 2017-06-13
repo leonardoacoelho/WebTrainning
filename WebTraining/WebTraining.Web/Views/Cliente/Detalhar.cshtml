@@ -1,0 +1,45 @@
+﻿@model WebTraining.Web.Models.ClienteVM
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Cliente</h2>
+
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index")">Clientes</a></li>
+    <li>Detalhes</li>
+</ol>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<br />
+<p class="col-md-4">
+    <a href="@Url.Action("Editar", new{ Model.Id })" class="btn btn-primary text-right">Editar</a>
+</p>
+
+<hr />
+
+<div class="alert alert-info text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>

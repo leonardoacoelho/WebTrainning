@@ -1,0 +1,50 @@
+﻿@model WebTraining.Web.Models.ClienteVM
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Cliente</h2>
+
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index")">Clientes</a></li>
+    <li>Editar</li>
+</ol>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-sm-3 col-md-2" })
+            <div class="col-sm-3 col-md-2">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-sm-3 col-md-2" })
+            <div class="col-sm-3 col-md-2">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-3 col-md-2 text-right">
+                <input type="submit" value="Confirmar" class="btn btn-warning" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="alert alert-info">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>

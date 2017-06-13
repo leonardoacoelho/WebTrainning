@@ -53,9 +53,12 @@
     <Compile Include="ClienteDAO.cs" />
     <Compile Include="Configurations\ClienteConfig.cs" />
     <Compile Include="Configurations\GrupoProdutoConfig.cs" />
+    <Compile Include="Configurations\ItemVendaConfig.cs" />
     <Compile Include="Configurations\ProdutoConfig.cs" />
+    <Compile Include="Configurations\VendaConfig.cs" />
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="GrupoProdutoDAO.cs" />
+    <Compile Include="ItemVendaDAO.cs" />
     <Compile Include="Migrations\201706011410025_Initial.cs" />
     <Compile Include="Migrations\201706011410025_Initial.Designer.cs">
       <DependentUpon>201706011410025_Initial.cs</DependentUpon>
@@ -64,9 +67,14 @@
     <Compile Include="Migrations\201706082040554_Add_Cliente.Designer.cs">
       <DependentUpon>201706082040554_Add_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706131842238_Add_Venda_E_ItemVenda.cs" />
+    <Compile Include="Migrations\201706131842238_Add_Venda_E_ItemVenda.Designer.cs">
+      <DependentUpon>201706131842238_Add_Venda_E_ItemVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VendaDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -84,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706082040554_Add_Cliente.resx">
       <DependentUpon>201706082040554_Add_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131842238_Add_Venda_E_ItemVenda.resx">
+      <DependentUpon>201706131842238_Add_Venda_E_ItemVenda.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
